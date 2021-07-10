@@ -328,10 +328,16 @@ $(document).ready(function(){
 						
 						
 						<td>
-							<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-							<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+							<a href=" " class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+							<form action="{{route('users.delete', ['id'=>$u->id])}}" method="GET">
+   							 @csrf
+    						@method('delete')
+    	
+    						<button type="submit"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></button>
+							</form>
 						</td>
 					</tr>
+
 @endforeach					
 				</tbody>
 			</table>

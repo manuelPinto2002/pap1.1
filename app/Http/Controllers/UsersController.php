@@ -23,4 +23,18 @@ class UsersController extends Controller
        return view('users');
 
    }
+
+  public function delete (request $request){
+   $idUser=$request->id;
+   $user=User::where('id',$idUser)->first();
+  $user=User::findOrFail($idUser);
+  $user->delete();
+
+return redirect()->route('produtos.index')->with('mensagem','User Eliminado com Sucesso!');
+}
+    
+
+    
+ 
+
 }
