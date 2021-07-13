@@ -87,8 +87,22 @@
   </nav>
 
 
+<div class="container" >
+
+    <div class="row">
+
+      <div class="col-md-5" >
+
+
+      </div>
+      <!-- /.col-lg-3 -->
 @yield('galeria')
 @yield('produtos')
+     
+  <!-- /.container -->
+
+  <!-- Footer -->
+</div></div>
 
   @yield('rodape')
   <div class="py-5 bg-dark" >
