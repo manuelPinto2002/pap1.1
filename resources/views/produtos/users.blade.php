@@ -285,7 +285,7 @@ $(document).ready(function(){
 					</div>
 					<div class="col-sm-6">
 						<a href="" class="btn btn-success" ><i class="material-icons">&#xE147;</i> <span>Adicionar Usuário</span></a>
-						<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Apagar Usuários</span></a>						
+											
 					</div>
 				</div>
 			</div>
@@ -318,7 +318,7 @@ $(document).ready(function(){
 							</span>
 						</td>
 						
-						<td>{{$u->id}}</td><br>
+						<td>{{$u->id}}</td>
 						<td>{{$u->name}}</td>
 						<td>{{$u->contacto}}</td>
 						<td>{{$u->email}}</td>
@@ -327,13 +327,26 @@ $(document).ready(function(){
 						
 						
 						
+    
+
 						<td>
-							<a href=" " class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+						
+							<form action="{{route('users.edit', ['id'=>$u->id])}}" method="GET">
+   							 @csrf
+    						@method('edit')
+
+							<button type="submit" class="btn btn-light" style="color: #C8A702"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></button>
+						</form>
+
+
+							
+
+
 							<form action="{{route('users.delete', ['id'=>$u->id])}}" method="GET">
    							 @csrf
     						@method('delete')
     	
-    						<button type="submit"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></button>
+    						<button type="submit" class="btn btn-light" style="color: red"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></button>
 							</form>
 						</td>
 					</tr>

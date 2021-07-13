@@ -288,7 +288,7 @@ $(document).ready(function(){
 					</div>
 					<div class="col-sm-6">
 						<a href="{{route('produtos.create')}}" class="btn btn-success" ><i class="material-icons">&#xE147;</i> <span>Adicionar Anúncio</span></a>
-						<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Apagar Anúncios</span></a>						
+												
 					</div>
 				</div>
 			</div>
@@ -325,7 +325,7 @@ $(document).ready(function(){
 							</span>
 						</td>
 						
-						<td>{{$u->id_produto}}</td><br>
+						<td>{{$u->id_produto}}</td>
 						<td>{{$u->id}}</td>
 						<td>{{$u->produto}}</td>
 						<td>{{$u->preco}}€</td>
@@ -339,12 +339,12 @@ $(document).ready(function(){
 				
 						<td>
 									
-							<!--<a href="{{route('produtos.delete',['id'=>$u->id_produto])}}" class="delete" data-toggle="modal"></a>-->
+							<button type="submit" class="btn btn-light" style="color: #C8A702"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></button>
 							<form action="{{route('produtos.delete', ['id'=>$u->id_produto])}}" method="GET">
    							 @csrf
     						@method('delete')
     	
-    						<button type="submit"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></button>
+    						<button type="submit" class="btn btn-light" style="color: red"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></button>
 							</form>
 
 					
